@@ -62,21 +62,21 @@ class DiscountCalculatorTraditional(DiscountCalculator):
         self.cost = cost
 
     def get_discounted_price(self):
-        return self.cost - (self.cost * 0.10)
+        return f"Traditional hotdog price: {self.cost - (self.cost * 0.10)}$" \
 
 class DiscountCalculatorAmerican(DiscountCalculator):
     def __init__(self, cost):
         self.cost = cost
 
     def get_discounted_price(self):
-        return self.cost - (self.cost * 0.15)
+        return f"American hotdog price: {self.cost - (self.cost * 0.15)}$" \
 
 class DiscountCalculatorVillage(DiscountCalculator):
     def __init__(self, cost):
         self.cost = cost
 
     def get_discounted_price(self):
-        return self.cost - (self.cost * 0.25)
+        return f"Village hotdog price: {self.cost - (self.cost * 0.25)}$" \
 
 class Builder(ABC):
     @abstractmethod

@@ -52,6 +52,32 @@ class HotDog:
                     f"cooking time: {self.cooking_time} minutes"
         return info
 
+class DiscountCalculator():
+    @abstractmethod
+    def get_discounted_price(self):
+        pass
+
+class DiscountCalculatorTraditional(DiscountCalculator):
+    def __init__(self, cost):
+        self.cost = cost
+
+    def get_discounted_price(self):
+        return self.cost - (self.cost * 0.10)
+
+class DiscountCalculatorAmerican(DiscountCalculator):
+    def __init__(self, cost):
+        self.cost = cost
+
+    def get_discounted_price(self):
+        return self.cost - (self.cost * 0.15)
+
+class DiscountCalculatorVillage(DiscountCalculator):
+    def __init__(self, cost):
+        self.cost = cost
+
+    def get_discounted_price(self):
+        return self.cost - (self.cost * 0.25)
+
 class Builder(ABC):
     @abstractmethod
     def sharpness_thick(self) -> None: pass
@@ -169,3 +195,13 @@ if __name__ == '__main__':
         hotdog = builder.get_hotdog()
         print(hotdog)
         print('----------------------------')
+
+
+dc_Traditional = DiscountCalculatorTraditional(100)
+print(dc_Traditional.get_discounted_price())
+
+dc_American = DiscountCalculatorAmerican(100)
+print(dc_American.get_discounted_price())
+
+dc_Village = DiscountCalculatorVillage(100)
+print(dc_Village.get_discounted_price())

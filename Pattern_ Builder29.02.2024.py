@@ -86,7 +86,7 @@ print(builder)
 
 from abc import ABC, abstractmethod
 from enum import Enum
-from  collections import namedtuple
+from collections import namedtuple
 
 PastaBase = namedtuple('PastaBase', ['ThickTomatoMince', 'ColorType'])
 
